@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 @Controller
 public class HomeController {
+
     @Autowired
     CourseRepository courseRepository;
 
@@ -34,21 +35,21 @@ public class HomeController {
         courseRepository.save(course);
         return "redirect:/";
     }
-    @RequestMapping("/detail/{id}")
-    public String showCourse(@PathVariable("id") long id, Model
-    model)
-    {
-        model.addAttribute("course", courseRepository.findById(id).get());
-        return "show";
-    }
 
     @RequestMapping("/update/{id}")
     public String updateCourse(@PathVariable("id")long id, Model
     model){
-
-            model.addAttribute("course", courseRepository.findById(id).get());
+        model.addAttribute("course", courseRepository.findById(id).get());
         return "courseform";
+
     }
+
+     @RequestMapping("/detail/{id}")
+     public String showCourse(@PathVariable("id") long id, Model model) {
+         model.addAttribute("course", courseRepository.findById(id).get());
+         return "show";
+     }
+
 
     @RequestMapping("/delete/{id}")
     public String delCourse(@PathVariable("id")long id){
