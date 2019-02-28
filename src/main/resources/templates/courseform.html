@@ -14,19 +14,19 @@
     <span th:if="${#fields.hasErrors('title')}"
           th:errors="*{title}"></span><br/>
 
-   Instructor :<input type="text" th:field="*{instructor}" />
+    Instructor :<input type="text" th:field="*{instructor}" />
     <span th:if="${#fields.hasErrors('instructor')}"
           th:errors="*{instructor}"></span><br/>
 
-   Description :<textarea rows="3" th:field="*{description}" />
+    Description :<textarea rows="3" th:field="*{description}" />
     <span th:if="${#fields.hasErrors('description')}"
           th:errors="*{description}"></span><br/>
 
     Credits :<input type="text" th:field="*{credit}" />
     <span th:if="${#fields.hasErrors('credit')}"
           th:errors="*{credit"}></span><br/>
-<br/>
-<input type="submit" value="Submit" />
+    <br/>
+    <input type="submit" value="Submit" />
 
 </form>
 
